@@ -1,0 +1,19 @@
+{
+    "name": "hamsy",
+    "version": "0.0.1",
+    "description": "just Discord bot developed by a solo enthusiast",
+    "main": "index.js",
+    "scripts": {
+        "build": "nodemon ./deploy.js",
+        "deploy-global": "nodemon ./deploy-global.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "HamsterKaget",
+    "license": "ISC",
+    "dependencies": {
+        "discord.js": "^14.11.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.45.0"
+    }
+}
