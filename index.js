@@ -1,10 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
-const {
-  Client,
-  Collection,
-  GatewayIntentBits,
-} = require("discord.js");
+const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const { token } = require("./config.json");
 
 const client = new Client({
@@ -43,13 +39,9 @@ for (const file of eventFiles) {
   const filePath = path.join(eventsPath, file);
   const event = require(filePath);
   if (event.once) {
-    client.once(event.name, (...args) =>
-      event.execute(client, ...args)
-    ); // Pass the client object as the first argument
+    client.once(event.name, (...args) => event.execute(client, ...args)); // Pass the client object as the first argument
   } else {
-    client.on(event.name, (...args) =>
-      event.execute(client, ...args)
-    ); // Pass the client object as the first argument
+    client.on(event.name, (...args) => event.execute(client, ...args)); // Pass the client object as the first argument
   }
 }
 
